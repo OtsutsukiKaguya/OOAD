@@ -1,18 +1,15 @@
 package entities.role.decorate;
 
-import entities.role.Role;
-
 import java.util.Vector;
 
-public abstract class RoleDecorator extends Role {
-    protected Role role;
+public class RoleDecorator {
+    private String description;
 
-    public RoleDecorator(Role role) {
-        this.role = role;
+    public RoleDecorator(String description) {
+        this.description = description;
     }
 
-    @Override
-    public Vector<String> getDescription() {
-        return role.getDescription();
+    public void addDescription(Vector<String> descriptionList) {
+        descriptionList.add(description); // 添加描述
     }
 }
