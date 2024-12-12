@@ -22,15 +22,27 @@ public class Weather {
         }
     }
 
-    public String turnCold() {
+    public void turnCold() {
         curWea = "Cold";
         notifyObservers();
-        return "Turned Cold";
+        System.out.println("Turned Cold");
     }
 
-    public String turnHot() {
+    public void turnHot() {
         curWea = "Hot";
         notifyObservers();
-        return "Turned Hot";
+        System.out.println("Turned Hot");
+    }
+
+    public void turnStorm() {
+        curWea = "Storm";
+        notifyObservers();
+        System.out.println("Storm is coming!");
+    }
+
+    public void EnemyAppearance() {
+        curWea = "EnemyDetected";
+        System.out.println("\nEnemy appeared in the sky!");
+        notifyObservers();
     }
 }

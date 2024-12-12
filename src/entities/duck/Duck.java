@@ -3,7 +3,6 @@ package entities.duck;
 import behaviors.fly.FlyBehavior;
 import behaviors.quack.QuackBehavior;
 import shoot.Shootable;
-import java.util.Vector;
 
 public abstract class Duck implements Shootable {
     protected FlyBehavior flyBehavior;
@@ -25,11 +24,6 @@ public abstract class Duck implements Shootable {
 
     public String swim() {
         return name + " is swimming";
-    }
-
-    @Override
-    public Vector<String> shoot() {
-        return new Vector<>();
     }
 
     public void setFlyBehavior(FlyBehavior fb) {
@@ -54,6 +48,22 @@ public abstract class Duck implements Shootable {
 
     public boolean getIsDeath() {
         return isDeath;
+    }
+
+    // 被击中
+    public void beHit() {
+        if (!isDeath) {
+            isDeath = true;
+            System.out.println(name + " is hit and falls down!");
+        } else {
+            System.out.println(name + " is already dead.");
+        }
+    }
+
+    // 复活
+    public void startRevive() {
+        isDeath = false;
+        System.out.println("Before long, " + name + " regains its vitality and swims in the nearby water!");
     }
 
 }

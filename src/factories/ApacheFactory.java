@@ -6,6 +6,8 @@ import entities.plane.PlaneProduct;
 public class ApacheFactory implements PlaneFactory {
     @Override
     public PlaneProduct produce(String name) {
-        return new Apache();
+        Apache Plane = new Apache();
+        Plane.setName(name);
+        return Plane;
     }
 }

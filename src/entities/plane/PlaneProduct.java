@@ -2,7 +2,6 @@ package entities.plane;
 
 import behaviors.fly.FlyBehavior;
 import shoot.Shootable;
-import java.util.Vector;
 
 
 public abstract class PlaneProduct implements Shootable {
@@ -12,9 +11,13 @@ public abstract class PlaneProduct implements Shootable {
 
     public abstract String performFly();
 
-    @Override
-    public Vector<String> shoot() {
-        return new Vector<>();
+    public void shoot() {
+        System.out.println(name + " shot the target!");
+    }
+
+    public void beHit() {
+        isDeath = true;
+        System.out.println(name + " has been hit and is destroyed!");
     }
 
     public void setFlyBehavior(FlyBehavior fb) {
